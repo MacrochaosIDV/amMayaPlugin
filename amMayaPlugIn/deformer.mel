@@ -1,0 +1,19 @@
+global proc createTwist ()
+{
+	createNode test_node -n twist_node_1;
+	
+	sphere -n sphere1 -r 1;
+
+	connectAttr twist_node_1.angle 30;	
+}
+
+global proc twistMenu ()
+{
+	global string $gMainWindow;
+	menu -parent $gMainWindow -tearOff true -label "Twist" twistMenu;
+		menuItem -label "Twist Geometry"
+			-command "createTwist" twistMenuItem1;
+}
+
+// Run circleMenu to add "Circle" to the top level Maya menu list.
+twistMenu;
