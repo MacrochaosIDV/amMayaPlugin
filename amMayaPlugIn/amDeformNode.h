@@ -21,11 +21,17 @@ public:
                  const MMatrix& mat, 
                  unsigned int multiIndex) override;
 
+  
 
-  static	MObject	deformingMesh;
+  static MObject deformingMesh;
+  static MTypeId type_ID;
 };
-
-
 
 static void*
 creator();
+
+static MStatus
+initialize();
+
+MTypeId	amDeformNode::type_ID(0x001327c1);
+MObject amDeformNode::deformingMesh;

@@ -1,13 +1,13 @@
-global proc createTwist ()
+global proc amDeformNode ()
 {
-	createNode test_node -n twist_node_1;
+	createNode test_node -n deformerNode;
 	
 	sphere -n sphere1 -r 1;
 
 	connectAttr twist_node_1.angle 30;	
 }
 
-global proc twistMenu ()
+global proc amMenu ()
 {
 	global string $gMainWindow;
 	menu -parent $gMainWindow -tearOff true -label "Twist" twistMenu;
